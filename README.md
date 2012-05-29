@@ -1,22 +1,35 @@
-Ember Skeleton
-==============
+Ember Couchapp Skeleton
+=======================
 
-A skeleton application framework using Ember.js and Rake Pipeline.
+A Couchapp skeleton which uses Ember.js
+
+Installation
+------------
+
+    $ git clone git@github.com:pangratz/ember-couchapp-template.git
+    $ cd ember-couchapp-template
+
+Change APPNAME in `Rakefile` and `Assetfile` to your couchapp name
+
+    $ bundle install
+    $ bundle execute rake init
+
+Delete the `init` task from `Rakefile`.
 
 Running
 -------
 
-    $ bundle install
     $ bundle exec rackup
 
 App Structure
 -------------
 
-    ember-skeleton
+    ember-couchapp-template
     ├── Assetfile - App build file
     ├── Gemfile - Package dependencies for rakep/rack
     ├── Gemfile.lock - Here be dragons: don't touch, always include
     ├── app - App specific code
+    │   ├── index.html - The app entry point
     │   ├── css - App CSS or SCSS (.scss)
     │   ├── lib - App code, *modularized during build*
     │   ├── modules - Module code, *already modularized*
@@ -31,7 +44,6 @@ App Structure
     │   ├── loader.js - Built out JS module loader
     │   └── app.js - Built out app JS
     ├── config.ru - Rack development web server configuration
-    ├── index.html - The app entry point
     └── tmp - Temporary build files used by rakep
 
 Testing
