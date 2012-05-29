@@ -10,13 +10,7 @@ end
 
 output "app"
 input "app_template" do
-  match "**/*.js" do
-    filter AppNameFilter
-  end
-  match "**/*.css" do
-    filter AppNameFilter
-  end
-  match "**/*.html" do
+  match "**/*.{js,css,html}" do
     filter AppNameFilter
   end
   
