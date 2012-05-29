@@ -44,7 +44,11 @@ task :init do
   
   FileUtils.mv("couchappignore", ".couchappignore")
   FileUtils.mv("couchapprc", ".couchapprc")
-  # FileUtils.rm_rf('app_template')
-  # FileUtils.rm_rf('tests_template')
-  # FileUtils.rm_rf('couchapp_template')
+  
+  FileUtils.rm_rf('Initfile')  
+  FileUtils.rm_rf('app_template')
+  FileUtils.rm_rf('tests_template')
+  FileUtils.rm_rf('couchapp_template')
+  
+  puts "App initialized. Remove 'init' task from Rakefile"
 end
