@@ -1,6 +1,5 @@
 .DS_Store
 tmp/
-assets/
 
 # Couchapp
 .couchapprc
