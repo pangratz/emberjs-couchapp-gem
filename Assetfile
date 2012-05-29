@@ -1,4 +1,4 @@
-APPNAME = 'ember-skeleton'
+APPNAME = 'my-couchapp'
 
 require 'json'
 require 'rake-pipeline-web-filters'
@@ -37,7 +37,7 @@ class HandlebarsFilter < Filter
   end
 end
 
-output 'assets'
+output '_attachments'
 
 input 'app' do
   match 'lib/**/*.js' do

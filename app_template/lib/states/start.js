@@ -1,4 +1,4 @@
-require('ember-skeleton/core');
+require('#{APPNAME}/core');
 
 App.StartState = Ember.ViewState.extend({
 

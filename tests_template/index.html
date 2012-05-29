@@ -9,9 +9,9 @@
 <body>
   <div id="qunit"></div>
   <div id="qunit-fixture">test markup</div>
-  <script src="../assets/loader.js"></script>
-  <script src="../assets/app.js"></script>
-  <script src="../assets/app-tests.js"></script>
+  <script src="../_attachments/loader.js"></script>
+  <script src="../_attachments/app.js"></script>
+  <script src="../_attachments/app-tests.js"></script>
   <script>
     (function(QUnit) {
       // Hack QUnit to not suck for Ember objects
@@ -36,6 +36,8 @@
           }
         }
       }
+
+      loader.require('#{APPNAME}/core');
     })(QUnit);
   </script>
 </body>

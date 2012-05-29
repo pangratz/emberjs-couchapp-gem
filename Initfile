@@ -1,0 +1,45 @@
+class AppNameFilter < Filter
+  def generate_output(inputs, output)
+    inputs.each do |input|
+      result = input.read
+      result.gsub!(/#\{APPNAME\}/, "#{APPNAME}")
+      output.write(result)
+    end
+  end
+end
+
+output "app"
+input "app_template" do
+  match "**/*.js" do
+    filter AppNameFilter
+  end
+  match "**/*.css" do
+    filter AppNameFilter
+  end
+  match "**/*.html" do
+    filter AppNameFilter
+  end
+  
+  # copy any unprocessed files over to the output directory
+  filter Rake::Pipeline::ConcatFilter
+end
+
+output "tests"
+input "tests_template" do
+  match "**/*.html" do
+    filter AppNameFilter
+  end
+  
+  # copy any unprocessed files over to the output directory
+  filter Rake::Pipeline::ConcatFilter
+end
+
+output "."
+input "couchapp_template" do
+  match "_id" do
+    filter AppNameFilter
+  end
+  
+  # copy any unprocessed files over to the output directory
+  filter Rake::Pipeline::ConcatFilter
+end

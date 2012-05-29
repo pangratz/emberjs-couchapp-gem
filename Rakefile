@@ -1,4 +1,4 @@
-APPNAME = 'ember-skeleton'
+APPNAME = 'my-couchapp'
 
 require 'colored'
 require 'rake-pipeline'
@@ -36,4 +36,15 @@ end
 desc "Automatically run tests (Mac OS X only)"
 task :autotest do
   system("kicker -e 'rake test' app")
+end
+
+desc "Init app"
+task :init do
+  Rake::Pipeline::Project.new('Initfile').invoke
+  
+  FileUtils.mv("couchappignore", ".couchappignore")
+  FileUtils.mv("couchapprc", ".couchapprc")
+  # FileUtils.rm_rf('app_template')
+  # FileUtils.rm_rf('tests_template')
+  # FileUtils.rm_rf('couchapp_template')
 end
