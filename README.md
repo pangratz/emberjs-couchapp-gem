@@ -39,10 +39,7 @@ App Structure
     │   ├── templates - Handlebars templates, *modularized during build*
     │   ├── tests - App tests
     │   └── vendor - Vendor code, *modularized during build*
-    ├── assets - Built out asset files, minified in production
-    │   ├── app.css - Built out app CSS/SCSS
-    │   ├── loader.js - Built out JS module loader
-    │   └── app.js - Built out app JS
+    ├── _attachments - Built out asset files
     ├── config.ru - Rack development web server configuration
     └── tmp - Temporary build files used by rakep
 
