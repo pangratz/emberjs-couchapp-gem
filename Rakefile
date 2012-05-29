@@ -50,5 +50,8 @@ task :init do
   FileUtils.rm_rf('tests_template')
   FileUtils.rm_rf('couchapp_template')
   
+  FileUtils.rm_rf('.git')
+  `git init`
+  
   puts "App initialized. Remove 'init' task from Rakefile"
 end
