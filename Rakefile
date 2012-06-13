@@ -1,52 +1,17 @@
-APPNAME = 'my-couchapp'
+require "bundler/gem_tasks"
+require File.expand_path('../lib/emberjs-couchapp/version', __FILE__)
 
-require 'colored'
-require 'rake-pipeline'
+desc "run the specs"
+task :spec do
+    sh "rspec -cfs spec"
+end
 
-desc "Build #{APPNAME}"
+desc "build gem"
 task :build do
-  Rake::Pipeline::Project.new('Assetfile').invoke
+  sh "gem build emberjs-couchapp.gemspec"
 end
 
-desc "Clean #{APPNAME}"
-task :clean do
-  Rake::Pipeline::Project.new('Assetfile').clean
-end
-
-desc "Run tests with PhantomJS"
-task :test => :build do
-  unless system("which phantomjs > /dev/null 2>&1")
-    abort "PhantomJS is not installed. Download from http://phantomjs.org/"
-  end
-
-  cmd = "phantomjs tests/qunit/run-qunit.js \"file://#{File.dirname(__FILE__)}/tests/index.html\""
-
-  # Run the tests
-  puts "Running #{APPNAME} tests"
-  success = system(cmd)
-
-  if success
-    puts "Tests Passed".green
-  else
-    puts "Tests Failed".red
-    exit(1)
-  end
-end
-
-desc "Init app"
-task :init do
-  Rake::Pipeline::Project.new('Initfile').invoke
-  
-  FileUtils.mv("couchappignore", ".couchappignore")
-  FileUtils.mv("couchapprc", ".couchapprc")
-  
-  FileUtils.rm_rf('Initfile')  
-  FileUtils.rm_rf('app_template')
-  FileUtils.rm_rf('tests_template')
-  FileUtils.rm_rf('couchapp_template')
-  
-  FileUtils.rm_rf('.git')
-  `git init`
-  
-  puts "App initialized. Remove 'init' task from Rakefile"
+desc "install gem"
+task :install => :build do
+  sh "gem install pkg/emberjs-couchapp-#{EmberjsCouchapp::VERSION}.gem"
 end
