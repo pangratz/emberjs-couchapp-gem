@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'emberjs-couchapp/cli'
+
+EmberjsCouchapp::CLI.start
