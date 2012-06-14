@@ -18,5 +18,5 @@ end
 
 desc "release gem"
 task :release => :build do
-  sh "gem deploy pkg/emberjs-couchapp-#{EmberjsCouchapp::VERSION}.gem"
+  sh "gem push pkg/emberjs-couchapp-#{EmberjsCouchapp::VERSION}.gem"
 end
