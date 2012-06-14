@@ -15,3 +15,5 @@ desc "install gem"
 task :install => :build do
   sh "gem install pkg/emberjs-couchapp-#{EmberjsCouchapp::VERSION}.gem"
 end
+
+task :default => :spec
