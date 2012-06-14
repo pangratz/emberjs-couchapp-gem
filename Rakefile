@@ -15,3 +15,8 @@ desc "install gem"
 task :install => :build do
   sh "gem install pkg/emberjs-couchapp-#{EmberjsCouchapp::VERSION}.gem"
 end
+
+desc "release gem"
+task :release => :build do
+  sh "gem deploy pkg/emberjs-couchapp-#{EmberjsCouchapp::VERSION}.gem"
+end
