@@ -1,4 +1,4 @@
-Gem to create a CouchApp using Ember.js
+Gem to create a CouchApp using Ember.js [![Build Status](https://secure.travis-ci.org/pangratz/emberjs-couchapp-gem.png?branch=master)](http://travis-ci.org/pangratz/emberjs-couchapp-gem) [![Dependency Status](https://gemnasium.com/pangratz/emberjs-couchapp-gem.png)](https://gemnasium.com/pangratz/emberjs-couchapp-gem)
 =======================================
 
 Installation
