@@ -50,3 +50,11 @@ Or you can run the tests via
 You can automatically execute the tests every time a file changes via
 
     $ bundle exec guard
+
+
+Developing this Gem
+-------------------
+
+    $ gem install gem-release
+    $ gem bump // to bump version
+    $ gem release --tag // to release new version
