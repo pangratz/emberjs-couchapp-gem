@@ -1,7 +1,7 @@
-Ember Skeleton
-==============
+Couchapp using Ember.js
+=======================
 
-A skeleton application framework using Ember.js and Rake Pipeline.
+Couchapp using Ember.js and Rake Pipeline.
 
 Running
 -------
@@ -26,12 +26,13 @@ App Structure
     │   ├── templates - Handlebars templates, *modularized during build*
     │   ├── tests - QUnit application tests
     │   └── vendor - Vendor code, *modularized during build*
-    ├── assets - Built out asset files, minified in production
+    ├── _attachments - Built out asset files, minified in production
+    |   ├── index.html
     │   ├── app.css - Built out app CSS/SCSS
     │   ├── app.js - Built out app JS
     │   └── loader.js - Built out JS module loader
+    ├── test_assets - Built out test asset files
     ├── config.ru - Rack development web server configuration
-    ├── index.html - The app entry point
     ├── tests - QUnit testing files
     │   ├── index.html - The testing entry point
     │   ├── qunit - Testing support files
