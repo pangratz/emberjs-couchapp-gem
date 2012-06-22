@@ -4,4 +4,7 @@
   // ".*~$"
   // ".*\\.swp$"
   // ".*\\.bak$"
+  "app",
+  "test_assets",
+  "tests"
 ]
